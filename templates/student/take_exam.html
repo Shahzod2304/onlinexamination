@@ -1,0 +1,53 @@
+{% extends 'student/studentbase.html' %}
+{% block content %}
+{%load static%}
+
+<head>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+</head>
+<br><br>
+<div class="container my-4">
+    <div class="jumbotron">
+
+        <div class="row">
+
+            <div class="card border-info mx-4 my-4">
+                <div class="card-body text-default">
+
+                    <h4 class="card-title">Imtihon tafsilotlari :</h4>
+                    <p class="card-text">
+                        </p><ul style="list-style:decimal;">
+                            <li>Kurs : {{course.course_name}}</li>
+                            <li>Jami savollar : {{total_questions}}</li>
+                            <li>Jami to'plash mumkin bo'lgan ball : {{total_marks}}</li>
+                        </ul>
+                    <p></p>
+
+
+
+                    <h4 class="card-title">Qoidalar :</h4>
+                    <p class="card-text">
+                        </p><ul style="list-style:decimal;">
+                            <li>Javoblardan A,B,C,D kabilardan birini tanlash mumkin</li>
+                            <li><span class="text-danger">Javoblardan faqat bittasini tanlash mumkin.</span></li>
+                            <li>Har bir savol turli javobga ega.</li>
+                            <li>Savollarga to'g'ri javob berishga harakat qiling.</li>
+                            <li>Imtixondan so'ng darhol natijangizni ko'rishingiz mumkin.</li>
+                            <li>Agar sahifani yangilasangiz yoki ortga qaytsangiz darhol imtixon natijangiz adminga yuboriladi</li>
+                        </ul>
+                    <p></p>
+                    <a href="{% url 'start-exam' course.id  %}" class="btn btn-success" style="border-radius:0px;">Imtixonni boshlash</a>
+                </div>  
+                <div class="card-footer">Omad! qadrli o'quvchi ✊</div>  
+            </div>  
+        </div>  
+
+    </div>
+</div>
+
+<br><br><br><br><br><br>
+{% endblock content %}
